@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+
 import NavBar from "../../components/NavBar/NavBar";
 import Sports from "../Sports/sports";
 import Shopping from "../Shopping/shopping";
@@ -8,30 +9,54 @@ import Theatre from "../Theatre/theatre";
 import History from "../History/history";
 
 const Thingstodo = () => {
-  const [chosenOption, setChosenOption] = useState(0);
+  const [chosenOption] = useState(0);
   return (
     <div>
       <NavBar />
       <div className="thingstodo-wrapper">
         <div className="left">
-          <a className="cursor-pointer" onClick={() => setChosenOption(0)}>
+          {/* <a
+            href=""
+            className="cursor-pointer"
+            onClick={() => setChosenOption(0)}
+          >
             SPORT
           </a>
-          <a className="cursor-pointer" onClick={() => setChosenOption(1)}>
+          <a
+            href=""
+            className="cursor-pointer"
+            onClick={() => setChosenOption(1)}
+          >
             SHOPPING
           </a>
-          <a className="cursor-pointer" onClick={() => setChosenOption(2)}>
+          <a
+            href=""
+            className="cursor-pointer"
+            onClick={() => setChosenOption(2)}
+          >
             PARKS
           </a>
-          <a className="cursor-pointer" onClick={() => setChosenOption(3)}>
+          <a
+            href=""
+            className="cursor-pointer"
+            onClick={() => setChosenOption(3)}
+          >
             CINEMA
           </a>
-          <a className="cursor-pointer" onClick={() => setChosenOption(4)}>
+          <a
+            href=""
+            className="cursor-pointer"
+            onClick={() => setChosenOption(4)}
+          >
             THEATRE
           </a>
-          <a className="cursor-pointer" onClick={() => setChosenOption(5)}>
+          <a
+            href=""
+            className="cursor-pointer"
+            onClick={() => setChosenOption(5)}
+          >
             HISTORY
-          </a>
+          </a> */}
         </div>
         <div className="right">
           {chosenOption === 0 && <Sports />}

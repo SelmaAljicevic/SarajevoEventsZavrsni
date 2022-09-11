@@ -14,15 +14,15 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={HomePage}></Route>
-        <Route exact path="/thingstodo" component={ThingsToDo}></Route>
-        <Route exact path="/events" component={Events}></Route>
-        <Route exact path="/hotels" component={Hotels}></Route>
-        <Route exact path="/parks" component={Parks}></Route>
-        <Route exact path="/sports" component={Sports}></Route>
-        <Route exact path="/cinema" component={Cinema}></Route>
-        <Route exact path="/theatre" component={Theatre}></Route>
-        <Route exact path="/history" component={History}></Route>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/thingstodo" component={ThingsToDo} />
+        <Route exact path="/events" component={Events} />
+        <Route exact path="/hotels" component={Hotels} />
+        <Route exact path="/parks" component={Parks} />
+        <Route exact path="/sports" component={Sports} />
+        <Route exact path="/cinema" component={Cinema} />
+        <Route exact path="/theatre" component={Theatre} />
+        <Route exact path="/history" component={History} />
       </Switch>
     </BrowserRouter>
   );

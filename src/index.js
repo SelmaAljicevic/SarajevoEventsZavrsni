@@ -1,7 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { QueryClient, QueryClientProvider } from "react-query";
+
 import App from "./App";
 
 import "./main_style.css";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
+
+ReactDOM.render(
+  <QueryClientProvider client={queryClient}>
+    <App />
+  </QueryClientProvider>,
+  document.getElementById("root")
+);
