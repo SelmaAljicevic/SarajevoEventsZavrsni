@@ -17,9 +17,15 @@ function NavBar() {
           <Link className="menu-item" to="/about-us">
             About us
           </Link>
-          <Link className="menu-item" to="/login">
-            Login
-          </Link>
+          <div>
+            <Link className="menu-item" to="/login">
+              <strong>Login</strong>
+            </Link>
+            &nbsp;or&nbsp;
+            <Link className="menu-item" to="/register">
+              <strong>Register</strong>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

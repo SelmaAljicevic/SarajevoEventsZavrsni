@@ -4,6 +4,7 @@ import { AboutUs } from "screens/AboutUs/AboutUs";
 import Events from "./screens/Events/Events";
 import FavoriteEvents from "./screens/FavoriteEvents/FavoriteEvents";
 import { Login } from "./screens/Login/Login";
+import { Register } from "./screens/Register/Register";
 
 import "./App.css";
 
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/events" component={Events} />
         <Route exact path="/about-us" component={AboutUs} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
       </Switch>
     </BrowserRouter>
   );
