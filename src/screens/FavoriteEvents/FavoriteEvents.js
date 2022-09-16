@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import { Button } from "components";
+import { Button, Page } from "components";
 import { useEvents } from "hooks";
-
-import NavBar from "../../components/NavBar/NavBar";
-import Footer from "../../components/Footer/Footer";
 
 import { Event } from "./Event";
 
@@ -58,8 +55,7 @@ const FavoriteEvents = () => {
   };
 
   return (
-    <>
-      <NavBar />
+    <Page>
       <Wrapper>
         {events.map((e, i) => {
           return <StyledEvent key={`event-${i}`} event={e} />;
@@ -72,8 +68,7 @@ const FavoriteEvents = () => {
           </StyledButton>
         )}
       </StyledButtonWrapper>
-      <Footer />
-    </>
+    </Page>
   );
 };
 

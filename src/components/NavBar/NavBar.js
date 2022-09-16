@@ -6,7 +6,7 @@ function NavBar() {
   return (
     <div className="navbar">
       <div className="navbar-wrapper">
-        <img src={SarajevoEventsLogo2} width="180px" />
+        <img src={SarajevoEventsLogo2} alt="logo" width="180px" />
         <div className="menu-items">
           <Link className="menu-item" to="/">
             Favourite Events
@@ -16,6 +16,9 @@ function NavBar() {
           </Link>
           <Link className="menu-item" to="/about-us">
             About us
+          </Link>
+          <Link className="menu-item" to="/login">
+            Login
           </Link>
         </div>
       </div>

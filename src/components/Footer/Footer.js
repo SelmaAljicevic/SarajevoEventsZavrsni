@@ -13,7 +13,6 @@ function Footer() {
           </div>
 
           <div class="col-xs-6 col-md-3">
-            <h6></h6>
             <p class="text-justify">
               If you have any queries about anything please get in touch with
               us!We aim to reply to all emails within 24 hours.
