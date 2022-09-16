@@ -1,9 +1,9 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { AboutUs } from "screens/AboutUs/AboutUs";
 
-import Events from "screens/Events/Events";
-import FavoriteEvents from "screens/FavoriteEvents/FavoriteEvents";
-import { Login } from "screens/Login/Login";
+import Events from "./screens/Events/Events";
+import FavoriteEvents from "./screens/FavoriteEvents/FavoriteEvents";
+import { Login } from "./screens/Login/Login";
 
 import "./App.css";
 
