@@ -11,12 +11,14 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 500px;
 `;
 
 const FormWrapper = styled.form`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  height: 100%;
 `;
 
 export const Register = () => {
@@ -45,11 +47,15 @@ export const Register = () => {
       <Wrapper>
         <h3>Register</h3>
         <FormWrapper onSubmit={onRegister}>
-          <Input type="email" name="email" required />
+          <label>Email</label> <Input type="email" name="email" required />
+          <label>Password</label>{" "}
           <Input type="password" name="password" required />
+          <label>Confirm password</label>{" "}
           <Input type="password" name="confirmPassword" required />
           <Error>{!arePasswordsMatching && "Passwords need to match!"}</Error>
-          <Button type="submit">Register</Button>
+          <Button style={{ marginBottom: 10 }} type="submit">
+            Register
+          </Button>
         </FormWrapper>
       </Wrapper>
     </Page>
