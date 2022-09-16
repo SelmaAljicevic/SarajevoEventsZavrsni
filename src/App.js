@@ -1,28 +1,27 @@
-import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import HomePage from "./screens/HomePage/homepage";
-import ThingsToDo from "./screens/ThingsToDo/thingstodo";
-import Events from "./screens/Events/events";
-import Hotels from "./screens/Hotels/hotels";
-import Parks from "./screens/Parks/parks";
-import Sports from "./screens/Sports/sports";
-import Cinema from "./screens/Cinema/cinema";
-import Theatre from "./screens/Theatre/theatre";
-import History from "./screens/History/history";
+import { AboutUs } from "screens/AboutUs/AboutUs";
+
+import Events from "screens/Events/Events";
+import FavoriteEvents from "screens/FavoriteEvents/FavoriteEvents";
+// import ThingsToDo from "./screens/ThingsToDo/thingstodo";
+// import Events from "./screens/Events/events";
+// import Hotels from "./screens/Hotels/hotels";
+// import Parks from "./screens/Parks/parks";
+// import Sports from "./screens/Sports/sports";
+// import Cinema from "./screens/Cinema/cinema";
+// import Theatre from "./screens/Theatre/theatre";
+// import History from "./screens/History/history";
+
+import "./App.css";
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route exact path="/thingstodo" component={ThingsToDo} />
+        <Route exact path="/" component={FavoriteEvents} />
+        <Route exact path="/favorite-events" component={FavoriteEvents} />
         <Route exact path="/events" component={Events} />
-        <Route exact path="/hotels" component={Hotels} />
-        <Route exact path="/parks" component={Parks} />
-        <Route exact path="/sports" component={Sports} />
-        <Route exact path="/cinema" component={Cinema} />
-        <Route exact path="/theatre" component={Theatre} />
-        <Route exact path="/history" component={History} />
+        <Route exact path="/about-us" component={AboutUs} />
       </Switch>
     </BrowserRouter>
   );

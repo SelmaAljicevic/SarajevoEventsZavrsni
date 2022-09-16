@@ -10,13 +10,15 @@ html {
   display: flex;
   width: 100%;
   height: 60px;
-  background-color: #c5c1c1;
+  background-color: #b3e7ec;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
 }
 
 .navbar .navbar-wrapper {
@@ -33,7 +35,24 @@ html {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  width: 100%;
+}
+
+.menu-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 50%;
+  margin-right: 5%;
+}
+
+.menu-item {
+  color: black;
+  text-decoration: none;
+}
+
+.menu-item:hover {
+  color: white;
 }
 
 .shopping-wrapper {
@@ -90,7 +109,7 @@ html {
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
+  align-items: flex-start;
   background-size: contain;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -98,8 +117,8 @@ html {
   flex-direction: column;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center;
-  font-size: x-large;
+  justify-content: flex-start;
+  font-size: 16px;
   padding: 40px;
 }
 
@@ -115,15 +134,60 @@ html {
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 40px;
+  color: #26272b;
 }
 
 .thingstodo-wrapper .cursor-pointer {
   cursor: pointer;
+  margin: 10px;
+  text-decoration: none;
 }
 
 .thingstodo-wrapper a:hover {
-  color: royalblue;
-  text-decoration: underline;
+  color: blue;
+}
+
+.site-footer {
+  background-color: #26272b;
+  padding: 10px 10px 20px;
+  font-size: 15px;
+  line-height: 24px;
+  color: #737373;
+}
+.site-footer h6 {
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 5px 0;
+  letter-spacing: 2px;
+}
+.site-footer .text-justify {
+  padding: 0px;
+  margin: 0px;
+}
+.site-footer a {
+  color: #737373;
+}
+.site-footer a:hover {
+  color: #3366cc;
+  text-decoration: none;
+}
+.copyright-text {
+  margin: 0;
+}
+@media (max-width: 991px) {
+  .site-footer [class^="col-"] {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .site-footer {
+    padding-bottom: 0;
+  }
+  .site-footer .copyright-text,
+  .site-footer .social-icons {
+    text-align: center;
+  }
 }
 
 body,

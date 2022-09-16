@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const Wrapper = styled.button`
+  cursor: pointer;
   border: 2px solid black;
   background: transparent;
   color: black;

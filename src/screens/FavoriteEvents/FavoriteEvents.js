@@ -5,26 +5,35 @@ import { Button } from "components";
 import { useEvents } from "hooks";
 
 import NavBar from "../../components/NavBar/NavBar";
+import Footer from "../../components/Footer/Footer";
+
 import { Event } from "./Event";
 
 const Wrapper = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-block: 20px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 40px;
 `;
 
 const StyledEvent = styled(Event)`
-  margin: 0 auto;
+  margin: 20px;
 `;
 
 const StyledButton = styled(Button)`
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
   width: 33%;
+  cursor: pointer;
 `;
 
-const Homepage = () => {
+const StyledButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const FavoriteEvents = () => {
   const [params, setParams] = useState({
     pageNumber: 1,
     pageSize: 1,
@@ -49,18 +58,23 @@ const Homepage = () => {
   };
 
   return (
-    <Wrapper>
+    <>
       <NavBar />
-      {events.map((e, i) => {
-        return <StyledEvent key={`event-${i}`} event={e} />;
-      })}
-      {!isAllLoaded && (
-        <StyledButton onClick={loadMore}>
-          {isLoading ? "Loading..." : "Load more"}
-        </StyledButton>
-      )}
-    </Wrapper>
+      <Wrapper>
+        {events.map((e, i) => {
+          return <StyledEvent key={`event-${i}`} event={e} />;
+        })}
+      </Wrapper>
+      <StyledButtonWrapper>
+        {!isAllLoaded && (
+          <StyledButton onClick={loadMore}>
+            {isLoading ? "Loading..." : "Load more"}
+          </StyledButton>
+        )}
+      </StyledButtonWrapper>
+      <Footer />
+    </>
   );
 };
 
-export default Homepage;
+export default FavoriteEvents;

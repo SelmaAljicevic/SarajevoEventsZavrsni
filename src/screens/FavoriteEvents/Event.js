@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
 
-  border: 1px solid black;
+  border-style: outset;
   padding: 10px;
   width: min-content;
 
@@ -22,9 +22,11 @@ export const Event = ({ event, ...rest }) => {
 
   return (
     <Wrapper {...rest}>
-      <div>{event.name}</div>
-      <div>Place: {event.place}</div>
-      <div style={{ marginBottom: 10 }}>Category: {event.category}</div>
+      <>
+        <div>{event.name}</div>
+        <div>Place: {event.place}</div>
+        <div style={{ marginBottom: 10 }}>Category: {event.category}</div>
+      </>
       <img src={event.image_url} alt="" />
     </Wrapper>
   );
