@@ -40,7 +40,7 @@ const EventsListWrapper = styled.div`
   flex-wrap: wrap;
 `;
 
-export const Events = () => {
+export const EventsList = () => {
   const [eventType, setEventType] = useState(EVENT_TYPES.MUSIC);
 
   const [events, setEvents] = useState([]);

@@ -1,7 +1,7 @@
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 import {
-  Events,
+  EventsList,
   FavoriteEvents,
   Login,
   Register,
@@ -22,7 +22,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={FavoriteEvents} />
         <Route exact path="/favorite-events" component={FavoriteEvents} />
-        <Route exact path="/events" component={Events} />
+        <Route exact path="/events" component={EventsList} />
         <Route exact path="/about-us" component={AboutUs} />
         <Route
           exact
