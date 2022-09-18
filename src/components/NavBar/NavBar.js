@@ -1,8 +1,23 @@
-import React from "react";
 import { Link } from "react-router-dom";
+
+import { useAuthContext } from "contexts";
 import SarajevoEventsLogo2 from "./SarajevoEventsLogo2.png";
+import { Button } from "components/Button";
+import styled from "styled-components";
+
+const LogoutWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  & > button {
+    height: 22px;
+    padding: 0px;
+  }
+`;
 
 function NavBar() {
+  const { user, logoutObj } = useAuthContext();
+
   return (
     <div className="navbar">
       <div className="navbar-wrapper">
@@ -17,14 +32,29 @@ function NavBar() {
           <Link className="menu-item" to="/about-us">
             About us
           </Link>
+          {user && (
+            <Link className="menu-item" to="/add-events">
+              Add Events
+            </Link>
+          )}
           <div>
-            <Link className="menu-item" to="/login">
-              <strong>Login</strong>
-            </Link>
-            &nbsp;or&nbsp;
-            <Link className="menu-item" to="/register">
-              <strong>Register</strong>
-            </Link>
+            {!user && (
+              <>
+                <Link className="menu-item" to="/login">
+                  <strong>Login</strong>
+                </Link>
+                &nbsp;or&nbsp;
+                <Link className="menu-item" to="/register">
+                  <strong>Register</strong>
+                </Link>
+              </>
+            )}
+            {user && (
+              <LogoutWrapper>
+                <div>{user?.email}</div>
+                <Button onClick={logoutObj.logout}>Logout</Button>
+              </LogoutWrapper>
+            )}
           </div>
         </div>
       </div>

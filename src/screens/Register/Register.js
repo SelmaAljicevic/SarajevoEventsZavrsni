@@ -1,10 +1,9 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { Button, Page } from "components";
-import { Input } from "components/Input/Input";
-import { useRegister } from "hooks";
-import { Error } from "components/Error/Error";
+import { Button, Page, Input, Error } from "components";
+import { useAuthContext } from "contexts";
 
 const Wrapper = styled.div`
   display: flex;
@@ -18,14 +17,14 @@ const FormWrapper = styled.form`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  height: 100%;
+  margin-bottom: 10px;
 `;
 
 export const Register = () => {
   const [arePasswordsMatching, setArePasswordsMatching] = useState(true);
-  const { register } = useRegister();
+  const { registerObj } = useAuthContext();
 
-  const onRegister = (e) => {
+  const onRegister = async (e) => {
     e.preventDefault();
 
     const email = e.target.email.value;
@@ -38,8 +37,12 @@ export const Register = () => {
     }
 
     setArePasswordsMatching(true);
-    const user = register(email, password);
-    console.log(user);
+    try {
+      const user = await registerObj.register({ email, password });
+      console.log(user);
+    } catch (error) {
+      // console.log(error.message);
+    }
   };
 
   return (
@@ -52,11 +55,18 @@ export const Register = () => {
           <Input type="password" name="password" required />
           <label>Confirm password</label>{" "}
           <Input type="password" name="confirmPassword" required />
-          <Error>{!arePasswordsMatching && "Passwords need to match!"}</Error>
           <Button style={{ marginBottom: 10 }} type="submit">
             Register
           </Button>
+          <div>
+            Already registered? Login <Link to="login">here</Link>
+          </div>
         </FormWrapper>
+        <Error>
+          {!arePasswordsMatching
+            ? "Passwords need to match!"
+            : registerObj.error?.message}
+        </Error>
       </Wrapper>
     </Page>
   );

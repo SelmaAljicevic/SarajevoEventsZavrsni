@@ -1,14 +1,22 @@
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { AboutUs } from "screens/AboutUs/AboutUs";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
-import Events from "./screens/Events/Events";
-import FavoriteEvents from "./screens/FavoriteEvents/FavoriteEvents";
-import { Login } from "./screens/Login/Login";
-import { Register } from "./screens/Register/Register";
+import {
+  Events,
+  FavoriteEvents,
+  Login,
+  Register,
+  AboutUs,
+  NotFound,
+  AddEvents,
+} from "screens";
+import { PrivateRoute } from "components";
 
 import "./App.css";
+import { useAuthContext } from "contexts";
 
 function App() {
+  const { user } = useAuthContext();
+
   return (
     <BrowserRouter>
       <Switch>
@@ -16,8 +24,26 @@ function App() {
         <Route exact path="/favorite-events" component={FavoriteEvents} />
         <Route exact path="/events" component={Events} />
         <Route exact path="/about-us" component={AboutUs} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Register} />
+        <Route
+          exact
+          path="/login"
+          render={(props) => {
+            if (user) return <Redirect to="/" />;
+
+            return <Login {...props} />;
+          }}
+        />
+        <Route
+          exact
+          path="/register"
+          render={(props) => {
+            if (user) return <Redirect to="/" />;
+
+            return <Register {...props} />;
+          }}
+        />
+        <PrivateRoute exact path="/add-events" component={AddEvents} />
+        <Route exact path="*" component={NotFound} />
       </Switch>
     </BrowserRouter>
   );

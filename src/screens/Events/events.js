@@ -41,7 +41,7 @@ const EventsListWrapper = styled.div`
   flex-wrap: wrap;
 `;
 
-const Events = () => {
+export const Events = () => {
   const [eventType, setEventType] = useState(EVENT_TYPES.MUSIC);
 
   const [events, setEvents] = useState([]);
@@ -80,8 +80,6 @@ const Events = () => {
     }));
   };
 
-  console.log(isAllLoaded);
-
   return (
     <Page>
       <div className="thingstodo-wrapper">
@@ -112,5 +110,3 @@ const Events = () => {
     </Page>
   );
 };
-
-export default Events;

@@ -30,7 +30,7 @@ const StyledButtonWrapper = styled.div`
   justify-content: center;
 `;
 
-const FavoriteEvents = () => {
+export const FavoriteEvents = () => {
   const [params, setParams] = useState({
     pageNumber: 1,
     pageSize: 1,
@@ -71,5 +71,3 @@ const FavoriteEvents = () => {
     </Page>
   );
 };
-
-export default FavoriteEvents;
