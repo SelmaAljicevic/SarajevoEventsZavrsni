@@ -50,9 +50,7 @@ export const Login = () => {
             No account? Register <Link to="register">here</Link>
           </div>
         </FormWrapper>
-        <Error>
-          {false ? "Passwords need to match!" : loginObj.error?.message}
-        </Error>
+        <Error>{loginObj.error?.message}</Error>
       </Wrapper>
     </Page>
   );
