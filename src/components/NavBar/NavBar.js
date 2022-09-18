@@ -52,7 +52,9 @@ export const NavBar = () => {
             )}
             {user && (
               <LogoutWrapper>
-                <div>{user?.email}</div>
+                <Link className="menu-item" to="/user">
+                  {user?.email}
+                </Link>
                 <Button onClick={logoutObj.logout}>Logout</Button>
               </LogoutWrapper>
             )}

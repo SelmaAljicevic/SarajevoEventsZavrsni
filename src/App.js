@@ -8,6 +8,7 @@ import {
   AboutUs,
   NotFound,
   AddEvents,
+  UserPage,
 } from "screens";
 import { PrivateRoute } from "components";
 import { useAuthContext } from "contexts";
@@ -43,6 +44,7 @@ function App() {
           }}
         />
         <PrivateRoute exact path="/add-events" component={AddEvents} />
+        <PrivateRoute exact path="/user" component={UserPage} />
         <Route exact path="*" component={NotFound} />
       </Switch>
     </BrowserRouter>
