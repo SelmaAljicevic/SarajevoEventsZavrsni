@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { Button, Page, Input, Error } from "components";
 import { useCreateEvent } from "hooks";
-import { EVENT_TYPES } from "constants/eventTypes.const";
+import { EVENT_TYPES } from "constants/eventsTypes.const";
 
 const Wrapper = styled.div`
   display: flex;

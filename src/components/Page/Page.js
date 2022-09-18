@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Footer from "../Footer/Footer";
-import NavBar from "../NavBar/NavBar";
+
+import { Footer, NavBar } from "components";
 
 const ContentWrapper = styled.div`
   min-height: 60%;

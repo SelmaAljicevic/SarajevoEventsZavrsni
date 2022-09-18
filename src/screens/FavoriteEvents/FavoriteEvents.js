@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import { Button, Page } from "components";
+import { Button, Page, Event } from "components";
 import { useEvents } from "hooks";
-
-import { Event } from "./Event";
 
 const Wrapper = styled.div`
   width: 100%;

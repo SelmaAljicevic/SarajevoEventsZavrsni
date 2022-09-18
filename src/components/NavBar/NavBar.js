@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 import { useAuthContext } from "contexts";
+import { Button } from "components";
+
 import SarajevoEventsLogo2 from "./SarajevoEventsLogo2.png";
-import { Button } from "components/Button";
-import styled from "styled-components";
 
 const LogoutWrapper = styled.div`
   display: flex;
@@ -15,7 +16,7 @@ const LogoutWrapper = styled.div`
   }
 `;
 
-function NavBar() {
+export const NavBar = () => {
   const { user, logoutObj } = useAuthContext();
 
   return (
@@ -60,6 +61,4 @@ function NavBar() {
       </div>
     </div>
   );
-}
-
-export default NavBar;
+};

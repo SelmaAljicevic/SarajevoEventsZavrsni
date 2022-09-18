@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-
-import { EVENT_TYPES } from "constants/eventTypes.const";
-import { Button, Page } from "components";
 import styled from "styled-components";
+
+import { Button, Page, Event } from "components";
 import { useEvents } from "hooks";
-import { Event } from "screens/FavoriteEvents/Event";
+import { EVENT_TYPES } from "constants/eventsTypes.const";
 
 const StyledButton = styled(Button)`
   width: 200px;

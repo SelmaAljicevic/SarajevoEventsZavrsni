@@ -10,9 +10,9 @@ import {
   AddEvents,
 } from "screens";
 import { PrivateRoute } from "components";
+import { useAuthContext } from "contexts";
 
 import "./App.css";
-import { useAuthContext } from "contexts";
 
 function App() {
   const { user } = useAuthContext();
