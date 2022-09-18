@@ -31,7 +31,7 @@ const StyledButtonWrapper = styled.div`
 export const FavoriteEvents = () => {
   const [params, setParams] = useState({
     pageNumber: 1,
-    pageSize: 1,
+    pageSize: 5,
     sortBy: "popularity",
     order: "desc",
   });
